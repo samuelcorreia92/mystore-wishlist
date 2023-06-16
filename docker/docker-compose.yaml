@@ -3,7 +3,10 @@ name: 'mystore-wishlist'
 
 services:
   wishlist-app-rest:
-    image: samuelferd/mystore-wishlist:0.0.1
+#    image: samuelferd/mystore-wishlist:0.0.1
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
     container_name: wishlist-app-rest
     restart: unless-stopped
     ports:

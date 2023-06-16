@@ -4,33 +4,18 @@ As principais tecnologias utilizadas foram as seguintes:
 
     - Java 17
     - SpringBoot 3.1.0
+    - Maven 3
     - MongoDB 6.0.6
     - RabbitMQ (In Progress)
 
 
-#### Build: Maven
-Realizar o `build` e `package` do projeto no computador local:
+#### Build and Run
+Realizar o `build` e `package` do projeto utilizando o maven:
  ```shell
 mvn clean package -Dmaven.test.skip=true
 ```
 
-#### Build: Docker
-Gerar uma nova imagem docker baseada no código-fonte atual
-
- ```shell
-docker build . -t samuelferd/mystore-wishlist:0.0.1 -f docker/Dockerfile
-```
-
-#### Build: Docker ( Push Image ) [ OPCIONAL ]
-Nessa etapa vamos subir a nova imagem no Docker Registry (nesse caso será utilizado o registry oficial do Docker).
-
- ```shell
-docker push samuelferd/mystore-wishlist:0.0.1
-```
-
-#### Run: Utilizando a imagem Docker ( Docker-compose )
-Para subir o projeto numa instância Docker local basta executar o docker-compose (`docker/docker-compose.yaml`):
-
+Agora basta subir o projeto utilizando o docker-compose (`docker/docker-compose.yaml`):
 ```shell
 docker compose -f docker/docker-compose.yaml up
 ```
