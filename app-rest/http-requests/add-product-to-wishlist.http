@@ -1,0 +1,12 @@
+### Add product to inexistent wishlist (create default wishlist and add the product)
+POST {{host}}/api/v1/wishlist/add-product/102030
+Accept: application/json
+X-Client-Id: samuel
+X-Client-Premium: false
+
+
+### Add product to wishlist
+POST {{host}}/api/v1/wishlist/648c3741ae488c6149cf14e0/add-product/1122334
+Accept: application/json
+X-Client-Id: samuel
+X-Client-Premium: false

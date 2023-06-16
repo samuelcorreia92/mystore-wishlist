@@ -1,0 +1,35 @@
+version: '3.7'
+name: 'mystore-wishlist'
+
+services:
+  wishlist-app-rest:
+    image: samuelferd/mystore-wishlist:0.0.1
+    container_name: wishlist-app-rest
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
+    networks:
+      - mystore-network
+    command: sh -c '/app/wait-for.sh mongodb:27017 -- java -jar /app/app.jar'
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-mystore
+    hostname: mongodb
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: wishlist
+      MONGO_INITDB_ROOT_USERNAME: samuel
+      MONGO_INITDB_ROOT_PASSWORD: samuel
+    networks:
+      - mystore-network
+
+volumes:
+  mongo-data:
+    driver: local
+
+networks:
+  mystore-network:
+    driver: bridge

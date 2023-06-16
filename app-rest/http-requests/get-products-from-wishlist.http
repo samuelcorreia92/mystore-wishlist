@@ -1,0 +1,12 @@
+### Get all products from default wishlist
+GET {{host}}/api/v1/wishlist/get-products
+Accept: application/json
+X-Client-Id: samuel
+X-Client-Premium: false
+
+
+### Get all products from informed wishlist
+GET {{host}}/api/v1/wishlist/648c3741ae488c6149cf14e0/get-products
+Accept: application/json
+X-Client-Id: samuel
+X-Client-Premium: false

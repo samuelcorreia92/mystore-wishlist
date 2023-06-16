@@ -1,0 +1,5 @@
+### Remove product from wishlist
+DELETE {{host}}/api/v1/wishlist/648c3741ae488c6149cf14e0/remove-product/102030
+Accept: application/json
+X-Client-Id: samuel
+X-Client-Premium: false
